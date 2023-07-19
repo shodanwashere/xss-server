@@ -10,6 +10,7 @@ $ docker run -d -p 80:80 --name xss-server xss-server:1
 $ docker exec -it xss-server bash
 ```
 Files are stored in the format `<victim_ip>.cky` and contain the victim's cookies exactly as if running `console.log(document.cookies)`.
+
 ---
 ## Disclaimer
 This server is for educational purposes only. I do not take responsibility for its unethical use against unauthorized targets.
